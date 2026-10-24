@@ -1,0 +1,379 @@
+[gd_scene format=4]
+
+[ext_resource type="Script" path="res://scripts/levels/Level.gd" id="1_wham7"]
+[ext_resource type="TileSet" path="res://assets/tiles/pixel_spaces_tileset.tres" id="2_suq8e"]
+[ext_resource type="Texture2D" path="res://assets/sprites/furniture/living_room/window_circle.png" id="3_h5bbj"]
+[ext_resource type="Texture2D" path="res://assets/sprites/objects/bedroom/clock_1_blue.png" id="4_mwb3f"]
+[ext_resource type="Texture2D" path="res://assets/sprites/furniture/living_room/window_square.png" id="5_6laac"]
+[ext_resource type="Texture2D" path="res://assets/sprites/furniture/bedroom/cabinet_1.png" id="6_8peun"]
+[ext_resource type="Texture2D" path="res://assets/sprites/furniture/elevator_closed.png" id="7_gcuca"]
+[ext_resource type="Texture2D" path="res://assets/sprites/furniture/living_room/table_long.png" id="8_xow11"]
+[ext_resource type="Texture2D" path="res://assets/sprites/objects/living_room/flowerpot_medium_green.png" id="9_cm35f"]
+[ext_resource type="Texture2D" path="res://assets/sprites/objects/living_room/flora_daisy_4.png" id="10_tmjgt"]
+[ext_resource type="PackedScene" path="res://scenes/objects/PickupItem.tscn" id="11_6hhko"]
+[ext_resource type="Script" path="res://scripts/world/PickupItem.gd" id="12_2tsso"]
+[ext_resource type="Texture2D" path="res://assets/sprites/objects/living_room/books_inside_1.png" id="13_smjs7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/objects/living_room/books_outside_1.png" id="14_s6ofh"]
+[ext_resource type="Texture2D" path="res://assets/sprites/objects/living_room/flora_aster.png" id="15_na2ik"]
+[ext_resource type="Texture2D" path="res://assets/sprites/objects/kitchen/blender_cup_red.png" id="16_bvf8d"]
+[ext_resource type="PackedScene" path="res://scenes/objects/Computer.tscn" id="17_fljmm"]
+[ext_resource type="Script" path="res://scripts/world/Computer.gd" id="18_v0jxs"]
+[ext_resource type="PackedScene" path="res://scenes/objects/DropZone.tscn" id="19_hgkar"]
+[ext_resource type="Script" path="res://scripts/world/DropZone.gd" id="20_ruoom"]
+[ext_resource type="PackedScene" path="res://scenes/objects/Pedestrian.tscn" id="21_oqeha"]
+[ext_resource type="Script" path="res://scripts/world/Hazard.gd" id="22_al2i5"]
+[ext_resource type="PackedScene" path="res://scenes/player/Player.tscn" id="23_arbgu"]
+[ext_resource type="Script" path="res://scripts/player/Player.gd" id="24_5fmri"]
+[ext_resource type="PackedScene" path="res://scenes/ui/HUD.tscn" id="25_tb7tq"]
+[ext_resource type="Script" path="res://scripts/ui/HUD.gd" id="26_hq4kv"]
+[ext_resource type="PackedScene" path="res://scenes/ui/PauseMenu.tscn" id="27_xy3bv"]
+[ext_resource type="Script" path="res://scripts/ui/PauseMenu.gd" id="28_iyyii"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0q8a"]
+size = Vector2(12, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26js3"]
+size = Vector2(12, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rntsx"]
+size = Vector2(24, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_syom6"]
+size = Vector2(12, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0781w"]
+size = Vector2(24, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vcjs"]
+size = Vector2(24, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wh0uv"]
+size = Vector2(24, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0b4p1"]
+size = Vector2(26, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oq6ya"]
+size = Vector2(26, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kclbe"]
+size = Vector2(26, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_alguf"]
+size = Vector2(26, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0jua2"]
+size = Vector2(5, 3)
+
+[node name="Level5" type="Node2D" unique_id=160526064]
+script = ExtResource("1_wham7")
+level_number = 5
+level_title = "Lunes de Oficina"
+objective = "Mantén [E] para encender 4 PCs y deja en cada escritorio su objeto. Esquiva a tus compañeros."
+time_limit = 55.0
+difficulty = 0.17
+
+[node name="Ground" type="TileMapLayer" parent="." unique_id=545244164]
+z_index = -10
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAEAAAABAAAAAAAAAAEAAAACAAAAAAAAAAEAAAADAAAAAAAAAAEAAAAEAAAAAAAAAAEAAAAFAAAAAAAAAAEAAAAGAAAAAAAAAAEAAAAHAAAAAAAAAAEAAAAIAAAAAAAAAAEAAAAJAAAAAAAAAAEAAAAKAAAAAAAAAAEAAAALAAAAAAAAAAEAAAAMAAAAAAAAAAEAAAANAAAAAAAAAAEAAAAOAAAAAAAAAAEAAAAPAAAAAAAAAAEAAAAQAAAAAAAAAAEAAAARAAAAAAAAAAEAAAASAAAAAAAAAAEAAAATAAAAAAAAAAEAAAAUAAAAAAAAAAEAAAAVAAAAAAAAAAEAAAAWAAAAAAAAAAEAAAAXAAAAAAAAAAEAAAAYAAAAAAAAAAEAAAAZAAAAAAAAAAEAAAAAAAEAAAAAAAEAAAABAAEAAAADAAEAAAACAAEAAAADAAEAAAADAAEAAAADAAEAAAAEAAEAAAADAAEAAAAFAAEAAAADAAEAAAAGAAEAAAADAAEAAAAHAAEAAAADAAEAAAAIAAEAAAADAAEAAAAJAAEAAAADAAEAAAAKAAEAAAADAAEAAAALAAEAAAADAAEAAAAMAAEAAAADAAEAAAANAAEAAAADAAEAAAAOAAEAAAADAAEAAAAPAAEAAAADAAEAAAAQAAEAAAADAAEAAAARAAEAAAADAAEAAAASAAEAAAADAAEAAAATAAEAAAADAAEAAAAUAAEAAAADAAEAAAAVAAEAAAADAAEAAAAWAAEAAAADAAEAAAAXAAEAAAADAAEAAAAYAAEAAAADAAEAAAAZAAEAAAAAAAEAAAAAAAIAAAAAAAEAAAABAAIAAAAEAAEAAAACAAIAAAAEAAEAAAADAAIAAAAEAAEAAAAEAAIAAAAEAAEAAAAFAAIAAAAEAAEAAAAGAAIAAAAEAAEAAAAHAAIAAAAEAAEAAAAIAAIAAAAEAAEAAAAJAAIAAAAEAAEAAAAKAAIAAAAEAAEAAAALAAIAAAAEAAEAAAAMAAIAAAAEAAEAAAANAAIAAAAEAAEAAAAOAAIAAAAEAAEAAAAPAAIAAAAEAAEAAAAQAAIAAAAEAAEAAAARAAIAAAAEAAEAAAASAAIAAAAEAAEAAAATAAIAAAAEAAEAAAAUAAIAAAAEAAEAAAAVAAIAAAAEAAEAAAAWAAIAAAAEAAEAAAAXAAIAAAAEAAEAAAAYAAIAAAAEAAEAAAAZAAIAAAAAAAEAAAAAAAMAAAAAAAEAAAABAAMAAAACAAAAAAACAAMAAAACAAAAAAADAAMAAAACAAAAAAAEAAMAAAACAAAAAAAFAAMAAAACAAAAAAAGAAMAAAACAAAAAAAHAAMAAAACAAAAAAAIAAMAAAADAAAAAAAJAAMAAAACAAAAAAAKAAMAAAADAAAAAAALAAMAAAADAAAAAAAMAAMAAAACAAAAAAANAAMAAAACAAAAAAAOAAMAAAACAAAAAAAPAAMAAAACAAAAAAAQAAMAAAADAAAAAAARAAMAAAACAAAAAAASAAMAAAACAAAAAAATAAMAAAACAAAAAAAUAAMAAAACAAAAAAAVAAMAAAACAAAAAAAWAAMAAAACAAAAAAAXAAMAAAACAAAAAAAYAAMAAAACAAAAAAAZAAMAAAAAAAEAAAAAAAQAAAAAAAEAAAABAAQAAAADAAAAAAACAAQAAAACAAAAAAADAAQAAAACAAAAAAAEAAQAAAACAAAAAAAFAAQAAAACAAAAAAAGAAQAAAADAAAAAAAHAAQAAAACAAAAAAAIAAQAAAACAAAAAAAJAAQAAAACAAAAAAAKAAQAAAACAAAAAAALAAQAAAACAAAAAAAMAAQAAAACAAAAAAANAAQAAAACAAAAAAAOAAQAAAACAAAAAAAPAAQAAAACAAAAAAAQAAQAAAACAAAAAAARAAQAAAADAAAAAAASAAQAAAADAAAAAAATAAQAAAACAAAAAAAUAAQAAAACAAAAAAAVAAQAAAACAAAAAAAWAAQAAAACAAAAAAAXAAQAAAACAAAAAAAYAAQAAAACAAAAAAAZAAQAAAAAAAEAAAAAAAUAAAAAAAEAAAABAAUAAAACAAAAAAACAAUAAAACAAAAAAADAAUAAAACAAAAAAAEAAUAAAACAAAAAAAFAAUAAAACAAAAAAAGAAUAAAACAAAAAAAHAAUAAAACAAAAAAAIAAUAAAACAAAAAAAJAAUAAAADAAAAAAAKAAUAAAACAAAAAAALAAUAAAACAAAAAAAMAAUAAAACAAAAAAANAAUAAAACAAAAAAAOAAUAAAADAAAAAAAPAAUAAAACAAAAAAAQAAUAAAACAAAAAAARAAUAAAACAAAAAAASAAUAAAACAAAAAAATAAUAAAACAAAAAAAUAAUAAAACAAAAAAAVAAUAAAACAAAAAAAWAAUAAAACAAAAAAAXAAUAAAACAAAAAAAYAAUAAAADAAAAAAAZAAUAAAAAAAEAAAAAAAYAAAAAAAEAAAABAAYAAAACAAAAAAACAAYAAAACAAAAAAADAAYAAAACAAAAAAAEAAYAAAACAAAAAAAFAAYAAAACAAAAAAAGAAYAAAACAAAAAAAHAAYAAAACAAAAAAAIAAYAAAACAAAAAAAJAAYAAAADAAAAAAAKAAYAAAACAAAAAAALAAYAAAADAAAAAAAMAAYAAAACAAAAAAANAAYAAAADAAAAAAAOAAYAAAACAAAAAAAPAAYAAAACAAAAAAAQAAYAAAADAAAAAAARAAYAAAACAAAAAAASAAYAAAACAAAAAAATAAYAAAACAAAAAAAUAAYAAAADAAAAAAAVAAYAAAACAAAAAAAWAAYAAAADAAAAAAAXAAYAAAADAAAAAAAYAAYAAAACAAAAAAAZAAYAAAAAAAEAAAAAAAcAAAAAAAEAAAABAAcAAAADAAAAAAACAAcAAAACAAAAAAADAAcAAAACAAAAAAAEAAcAAAACAAAAAAAFAAcAAAACAAAAAAAGAAcAAAACAAAAAAAHAAcAAAACAAAAAAAIAAcAAAACAAAAAAAJAAcAAAACAAAAAAAKAAcAAAACAAAAAAALAAcAAAADAAAAAAAMAAcAAAACAAAAAAANAAcAAAADAAAAAAAOAAcAAAACAAAAAAAPAAcAAAACAAAAAAAQAAcAAAACAAAAAAARAAcAAAACAAAAAAASAAcAAAACAAAAAAATAAcAAAACAAAAAAAUAAcAAAADAAAAAAAVAAcAAAADAAAAAAAWAAcAAAACAAAAAAAXAAcAAAACAAAAAAAYAAcAAAACAAAAAAAZAAcAAAAAAAEAAAAAAAgAAAAAAAEAAAABAAgAAAADAAAAAAACAAgAAAADAAAAAAADAAgAAAACAAAAAAAEAAgAAAACAAAAAAAFAAgAAAACAAAAAAAGAAgAAAACAAAAAAAHAAgAAAACAAAAAAAIAAgAAAACAAAAAAAJAAgAAAACAAAAAAAKAAgAAAACAAAAAAALAAgAAAACAAAAAAAMAAgAAAADAAAAAAANAAgAAAACAAAAAAAOAAgAAAACAAAAAAAPAAgAAAACAAAAAAAQAAgAAAACAAAAAAARAAgAAAACAAAAAAASAAgAAAACAAAAAAATAAgAAAACAAAAAAAUAAgAAAACAAAAAAAVAAgAAAACAAAAAAAWAAgAAAACAAAAAAAXAAgAAAACAAAAAAAYAAgAAAACAAAAAAAZAAgAAAAAAAEAAAAAAAkAAAAAAAEAAAABAAkAAAADAAAAAAACAAkAAAACAAAAAAADAAkAAAACAAAAAAAEAAkAAAACAAAAAAAFAAkAAAADAAAAAAAGAAkAAAACAAAAAAAHAAkAAAADAAAAAAAIAAkAAAADAAAAAAAJAAkAAAADAAAAAAAKAAkAAAACAAAAAAALAAkAAAACAAAAAAAMAAkAAAACAAAAAAANAAkAAAACAAAAAAAOAAkAAAADAAAAAAAPAAkAAAADAAAAAAAQAAkAAAACAAAAAAARAAkAAAADAAAAAAASAAkAAAACAAAAAAATAAkAAAACAAAAAAAUAAkAAAACAAAAAAAVAAkAAAACAAAAAAAWAAkAAAACAAAAAAAXAAkAAAACAAAAAAAYAAkAAAACAAAAAAAZAAkAAAAAAAEAAAAAAAoAAAAAAAEAAAABAAoAAAACAAAAAAACAAoAAAACAAAAAAADAAoAAAACAAAAAAAEAAoAAAACAAAAAAAFAAoAAAADAAAAAAAGAAoAAAACAAAAAAAHAAoAAAACAAAAAAAIAAoAAAACAAAAAAAJAAoAAAACAAAAAAAKAAoAAAACAAAAAAALAAoAAAACAAAAAAAMAAoAAAACAAAAAAANAAoAAAACAAAAAAAOAAoAAAACAAAAAAAPAAoAAAADAAAAAAAQAAoAAAACAAAAAAARAAoAAAACAAAAAAASAAoAAAADAAAAAAATAAoAAAADAAAAAAAUAAoAAAACAAAAAAAVAAoAAAACAAAAAAAWAAoAAAACAAAAAAAXAAoAAAACAAAAAAAYAAoAAAACAAAAAAAZAAoAAAAAAAEAAAAAAAsAAAAAAAEAAAABAAsAAAADAAAAAAACAAsAAAACAAAAAAADAAsAAAACAAAAAAAEAAsAAAADAAAAAAAFAAsAAAACAAAAAAAGAAsAAAADAAAAAAAHAAsAAAACAAAAAAAIAAsAAAADAAAAAAAJAAsAAAACAAAAAAAKAAsAAAACAAAAAAALAAsAAAACAAAAAAAMAAsAAAADAAAAAAANAAsAAAACAAAAAAAOAAsAAAACAAAAAAAPAAsAAAACAAAAAAAQAAsAAAACAAAAAAARAAsAAAACAAAAAAASAAsAAAADAAAAAAATAAsAAAACAAAAAAAUAAsAAAACAAAAAAAVAAsAAAACAAAAAAAWAAsAAAACAAAAAAAXAAsAAAACAAAAAAAYAAsAAAADAAAAAAAZAAsAAAAAAAEAAAAAAAwAAAAAAAEAAAABAAwAAAADAAAAAAACAAwAAAACAAAAAAADAAwAAAACAAAAAAAEAAwAAAACAAAAAAAFAAwAAAACAAAAAAAGAAwAAAACAAAAAAAHAAwAAAADAAAAAAAIAAwAAAACAAAAAAAJAAwAAAACAAAAAAAKAAwAAAACAAAAAAALAAwAAAACAAAAAAAMAAwAAAACAAAAAAANAAwAAAADAAAAAAAOAAwAAAACAAAAAAAPAAwAAAADAAAAAAAQAAwAAAACAAAAAAARAAwAAAACAAAAAAASAAwAAAADAAAAAAATAAwAAAACAAAAAAAUAAwAAAACAAAAAAAVAAwAAAACAAAAAAAWAAwAAAADAAAAAAAXAAwAAAACAAAAAAAYAAwAAAACAAAAAAAZAAwAAAAAAAEAAAAAAA0AAAAAAAEAAAABAA0AAAAAAAEAAAACAA0AAAAAAAEAAAADAA0AAAAAAAEAAAAEAA0AAAAAAAEAAAAFAA0AAAAAAAEAAAAGAA0AAAAAAAEAAAAHAA0AAAAAAAEAAAAIAA0AAAAAAAEAAAAJAA0AAAAAAAEAAAAKAA0AAAAAAAEAAAALAA0AAAAAAAEAAAAMAA0AAAAAAAEAAAANAA0AAAAAAAEAAAAOAA0AAAAAAAEAAAAPAA0AAAAAAAEAAAAQAA0AAAAAAAEAAAARAA0AAAAAAAEAAAASAA0AAAAAAAEAAAATAA0AAAAAAAEAAAAUAA0AAAAAAAEAAAAVAA0AAAAAAAEAAAAWAA0AAAAAAAEAAAAXAA0AAAAAAAEAAAAYAA0AAAAAAAEAAAAZAA0AAAAAAAEAAAA=")
+tile_set = ExtResource("2_suq8e")
+
+[node name="Decor" type="Node2D" parent="." unique_id=694230538]
+z_index = -5
+
+[node name="WindowCircle" type="Sprite2D" parent="Decor" unique_id=1369624082]
+position = Vector2(134, 29)
+texture = ExtResource("3_h5bbj")
+
+[node name="Clock1Blue" type="Sprite2D" parent="Decor" unique_id=553132877]
+position = Vector2(178, 29)
+texture = ExtResource("4_mwb3f")
+
+[node name="WindowCircle2" type="Sprite2D" parent="Decor" unique_id=760240184]
+position = Vector2(336, 29)
+texture = ExtResource("3_h5bbj")
+
+[node name="WindowSquare" type="Sprite2D" parent="Decor" unique_id=1215382760]
+position = Vector2(362, 29)
+texture = ExtResource("5_6laac")
+
+[node name="Entities" type="Node2D" parent="." unique_id=1477074329]
+y_sort_enabled = true
+
+[node name="Furniture" type="Node2D" parent="Entities" unique_id=1887927604]
+y_sort_enabled = true
+
+[node name="Cabinet1" type="StaticBody2D" parent="Entities/Furniture" unique_id=1609912524]
+position = Vector2(31, 58)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Entities/Furniture/Cabinet1" unique_id=463590587]
+texture = ExtResource("6_8peun")
+centered = false
+offset = Vector2(-7, -23)
+
+[node name="@CollisionShape2D@20" type="CollisionShape2D" parent="Entities/Furniture/Cabinet1" unique_id=768018728]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_q0q8a")
+
+[node name="Cabinet2" type="StaticBody2D" parent="Entities/Furniture" unique_id=827119494]
+position = Vector2(73, 58)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Entities/Furniture/Cabinet2" unique_id=1393030325]
+texture = ExtResource("6_8peun")
+centered = false
+offset = Vector2(-7, -23)
+
+[node name="@CollisionShape2D@21" type="CollisionShape2D" parent="Entities/Furniture/Cabinet2" unique_id=1425146422]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_26js3")
+
+[node name="ElevatorClosed" type="StaticBody2D" parent="Entities/Furniture" unique_id=225546451]
+position = Vector2(103, 58)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Entities/Furniture/ElevatorClosed" unique_id=1300785267]
+texture = ExtResource("7_gcuca")
+centered = false
+offset = Vector2(-13, -23)
+
+[node name="@CollisionShape2D@22" type="CollisionShape2D" parent="Entities/Furniture/ElevatorClosed" unique_id=561155641]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_rntsx")
+
+[node name="Cabinet3" type="StaticBody2D" parent="Entities/Furniture" unique_id=1064527027]
+position = Vector2(203, 58)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Entities/Furniture/Cabinet3" unique_id=834479156]
+texture = ExtResource("6_8peun")
+centered = false
+offset = Vector2(-7, -23)
+
+[node name="@CollisionShape2D@23" type="CollisionShape2D" parent="Entities/Furniture/Cabinet3" unique_id=866782351]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_syom6")
+
+[node name="ElevatorClosed2" type="StaticBody2D" parent="Entities/Furniture" unique_id=1465170568]
+position = Vector2(233, 58)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Entities/Furniture/ElevatorClosed2" unique_id=1245408042]
+texture = ExtResource("7_gcuca")
+centered = false
+offset = Vector2(-13, -23)
+
+[node name="@CollisionShape2D@24" type="CollisionShape2D" parent="Entities/Furniture/ElevatorClosed2" unique_id=28802437]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_0781w")
+
+[node name="ElevatorClosed3" type="StaticBody2D" parent="Entities/Furniture" unique_id=145166968]
+position = Vector2(269, 58)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Entities/Furniture/ElevatorClosed3" unique_id=309272441]
+texture = ExtResource("7_gcuca")
+centered = false
+offset = Vector2(-13, -23)
+
+[node name="@CollisionShape2D@25" type="CollisionShape2D" parent="Entities/Furniture/ElevatorClosed3" unique_id=1158280256]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_3vcjs")
+
+[node name="ElevatorClosed4" type="StaticBody2D" parent="Entities/Furniture" unique_id=1281864682]
+position = Vector2(305, 58)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Entities/Furniture/ElevatorClosed4" unique_id=836603970]
+texture = ExtResource("7_gcuca")
+centered = false
+offset = Vector2(-13, -23)
+
+[node name="@CollisionShape2D@26" type="CollisionShape2D" parent="Entities/Furniture/ElevatorClosed4" unique_id=228999594]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_wh0uv")
+
+[node name="Desk1" type="StaticBody2D" parent="Entities/Furniture" unique_id=313346231]
+position = Vector2(288, 156)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Entities/Furniture/Desk1" unique_id=217398073]
+texture = ExtResource("8_xow11")
+centered = false
+offset = Vector2(-14, -7)
+
+[node name="@CollisionShape2D@27" type="CollisionShape2D" parent="Entities/Furniture/Desk1" unique_id=1981720000]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_0b4p1")
+
+[node name="Desk2" type="StaticBody2D" parent="Entities/Furniture" unique_id=160296871]
+position = Vector2(288, 108)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Entities/Furniture/Desk2" unique_id=957278991]
+texture = ExtResource("8_xow11")
+centered = false
+offset = Vector2(-14, -7)
+
+[node name="@CollisionShape2D@28" type="CollisionShape2D" parent="Entities/Furniture/Desk2" unique_id=26895203]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_oq6ya")
+
+[node name="Desk3" type="StaticBody2D" parent="Entities/Furniture" unique_id=1071018549]
+position = Vector2(368, 108)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Entities/Furniture/Desk3" unique_id=394645559]
+texture = ExtResource("8_xow11")
+centered = false
+offset = Vector2(-14, -7)
+
+[node name="@CollisionShape2D@29" type="CollisionShape2D" parent="Entities/Furniture/Desk3" unique_id=9682069]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_kclbe")
+
+[node name="Desk4" type="StaticBody2D" parent="Entities/Furniture" unique_id=1616614404]
+position = Vector2(128, 156)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Entities/Furniture/Desk4" unique_id=141471436]
+texture = ExtResource("8_xow11")
+centered = false
+offset = Vector2(-14, -7)
+
+[node name="@CollisionShape2D@30" type="CollisionShape2D" parent="Entities/Furniture/Desk4" unique_id=16879607]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_alguf")
+
+[node name="FlowerpotMediumGreen" type="StaticBody2D" parent="Entities/Furniture" unique_id=1553012350]
+position = Vector2(168, 204)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Entities/Furniture/FlowerpotMediumGreen" unique_id=594793075]
+texture = ExtResource("9_cm35f")
+centered = false
+offset = Vector2(-3, -3)
+
+[node name="@CollisionShape2D@31" type="CollisionShape2D" parent="Entities/Furniture/FlowerpotMediumGreen" unique_id=948942413]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_0jua2")
+
+[node name="Plant" type="Sprite2D" parent="Entities/Furniture/FlowerpotMediumGreen" unique_id=258949203]
+position = Vector2(0, -3)
+texture = ExtResource("10_tmjgt")
+centered = false
+offset = Vector2(-5, -11)
+
+[node name="Items" type="Node2D" parent="Entities" unique_id=1191751022]
+y_sort_enabled = true
+
+[node name="Pickup0_Books" type="Area2D" parent="Entities/Items" unique_id=1701676544 instance=ExtResource("11_6hhko")]
+position = Vector2(168, 171)
+script = ExtResource("12_2tsso")
+item_id = "books"
+display_name = "Libros"
+texture = ExtResource("13_smjs7")
+
+[node name="Pickup1_Folders" type="Area2D" parent="Entities/Items" unique_id=1281812525 instance=ExtResource("11_6hhko")]
+position = Vector2(184, 75)
+script = ExtResource("12_2tsso")
+item_id = "folders"
+display_name = "Carpetas"
+texture = ExtResource("14_s6ofh")
+
+[node name="Pickup2_Plant" type="Area2D" parent="Entities/Items" unique_id=30113423 instance=ExtResource("11_6hhko")]
+position = Vector2(216, 107)
+script = ExtResource("12_2tsso")
+item_id = "plant"
+display_name = "Planta"
+texture = ExtResource("15_na2ik")
+
+[node name="Pickup3_Cup" type="Area2D" parent="Entities/Items" unique_id=1767384698 instance=ExtResource("11_6hhko")]
+position = Vector2(344, 187)
+script = ExtResource("12_2tsso")
+item_id = "cup"
+display_name = "Taza"
+texture = ExtResource("16_bvf8d")
+
+[node name="Tasks" type="Node2D" parent="Entities" unique_id=2015560508]
+y_sort_enabled = true
+
+[node name="Computer1" type="Area2D" parent="Entities/Tasks" unique_id=1393725338 instance=ExtResource("17_fljmm")]
+position = Vector2(281, 160)
+script = ExtResource("18_v0jxs")
+pc_name = "PC 1"
+hold_time = 1.3
+
+[node name="Drop0" type="Area2D" parent="Entities/Tasks" unique_id=1067292793 instance=ExtResource("19_hgkar")]
+position = Vector2(296, 160)
+script = ExtResource("20_ruoom")
+accepts_item = "books"
+zone_name = "Escritorio 1"
+ghost_texture = ExtResource("13_smjs7")
+
+[node name="Computer2" type="Area2D" parent="Entities/Tasks" unique_id=550592846 instance=ExtResource("17_fljmm")]
+position = Vector2(281, 112)
+script = ExtResource("18_v0jxs")
+pc_name = "PC 2"
+hold_time = 1.3
+
+[node name="Drop1" type="Area2D" parent="Entities/Tasks" unique_id=796397707 instance=ExtResource("19_hgkar")]
+position = Vector2(296, 112)
+script = ExtResource("20_ruoom")
+accepts_item = "folders"
+zone_name = "Escritorio 2"
+ghost_texture = ExtResource("14_s6ofh")
+
+[node name="Computer3" type="Area2D" parent="Entities/Tasks" unique_id=478554733 instance=ExtResource("17_fljmm")]
+position = Vector2(361, 112)
+script = ExtResource("18_v0jxs")
+pc_name = "PC 3"
+hold_time = 1.3
+
+[node name="Drop2" type="Area2D" parent="Entities/Tasks" unique_id=113442430 instance=ExtResource("19_hgkar")]
+position = Vector2(376, 112)
+script = ExtResource("20_ruoom")
+accepts_item = "plant"
+zone_name = "Escritorio 3"
+ghost_texture = ExtResource("15_na2ik")
+
+[node name="Computer4" type="Area2D" parent="Entities/Tasks" unique_id=1267206034 instance=ExtResource("17_fljmm")]
+position = Vector2(121, 160)
+script = ExtResource("18_v0jxs")
+pc_name = "PC 4"
+hold_time = 1.3
+
+[node name="Drop3" type="Area2D" parent="Entities/Tasks" unique_id=317499675 instance=ExtResource("19_hgkar")]
+position = Vector2(136, 160)
+script = ExtResource("20_ruoom")
+accepts_item = "cup"
+zone_name = "Escritorio 4"
+ghost_texture = ExtResource("16_bvf8d")
+
+[node name="Hazards" type="Node2D" parent="Entities" unique_id=1608595422]
+y_sort_enabled = true
+
+[node name="Walker0" type="Area2D" parent="Entities/Hazards" unique_id=1769605626 instance=ExtResource("21_oqeha")]
+position = Vector2(306.64374, 172)
+script = ExtResource("22_al2i5")
+speed = 22.666666666666668
+min_x = 24.0
+max_x = 392.0
+wrap_around = false
+time_penalty = 3.0
+hit_message = "¡Chocaste con un compañero! -3s"
+
+[node name="Player" type="CharacterBody2D" parent="Entities" unique_id=1366678235 instance=ExtResource("23_arbgu")]
+position = Vector2(216, 204)
+collision_layer = 2
+motion_mode = 1
+script = ExtResource("24_5fmri")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1909478756 instance=ExtResource("25_tb7tq")]
+layer = 10
+script = ExtResource("26_hq4kv")
+
+[node name="PauseMenu" type="CanvasLayer" parent="." unique_id=1960674560 instance=ExtResource("27_xy3bv")]
+layer = 20
+script = ExtResource("28_iyyii")

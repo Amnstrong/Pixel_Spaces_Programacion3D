@@ -1,0 +1,332 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/HUD.gd" id="1_atyv1"]
+[ext_resource type="FontFile" path="res://assets/fonts/press-start-2p.woff2" id="2_6ll6g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig75s"]
+content_margin_left = 4.0
+content_margin_top = 1.0
+content_margin_right = 2.0
+content_margin_bottom = 1.0
+bg_color = Color(0.11, 0.09, 0.16, 0.92)
+border_color = Color(1, 0.83, 0.38, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ed8p"]
+content_margin_left = 3.0
+content_margin_top = 0.0
+content_margin_right = 3.0
+content_margin_bottom = 0.0
+bg_color = Color(0.27, 0.22, 0.38, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.09, 0.07, 0.12, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rnyu1"]
+content_margin_left = 3.0
+content_margin_top = 0.0
+content_margin_right = 3.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 0.83, 0.38, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.09, 0.07, 0.12, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jlufg"]
+content_margin_left = 3.0
+content_margin_top = 0.0
+content_margin_right = 3.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 0.83, 0.38, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.09, 0.07, 0.12, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l20r4"]
+content_margin_left = 4.0
+content_margin_top = 1.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.11, 0.09, 0.16, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.83, 0.38, 1)
+anti_aliasing = false
+
+[node name="HUD" type="CanvasLayer" unique_id=1909478756]
+layer = 10
+script = ExtResource("1_atyv1")
+
+[node name="Root" type="Control" parent="." unique_id=398773001]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TopBar" type="PanelContainer" parent="Root" unique_id=1439713757]
+layout_mode = 0
+anchor_right = 1.0
+offset_bottom = 14.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ig75s")
+
+[node name="HBox" type="HBoxContainer" parent="Root/TopBar" unique_id=30887277]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="LevelLabel" type="Label" parent="Root/TopBar/HBox" unique_id=162823314]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(1, 0.83, 0.38, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.03, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+text = "Nivel"
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="TasksLabel" type="Label" parent="Root/TopBar/HBox" unique_id=1545574830]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(0.96, 0.93, 0.85, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.03, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+text = "Tareas 0/0"
+horizontal_alignment = 1
+
+[node name="TimerLabel" type="Label" parent="Root/TopBar/HBox" unique_id=1791801218]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_6ll6g")
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(0.96, 0.93, 0.85, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.03, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+text = "0:00"
+horizontal_alignment = 2
+
+[node name="PauseButton" type="Button" parent="Root/TopBar/HBox" unique_id=1378449507]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_4ed8p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rnyu1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jlufg")
+text = "II"
+
+[node name="ObjectivePanel" type="PanelContainer" parent="Root" unique_id=1272625654]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -115.0
+offset_top = 18.0
+offset_right = 115.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="ObjectiveLabel" type="Label" parent="Root/ObjectivePanel" unique_id=1172289019]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(0.96, 0.93, 0.85, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.03, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ToastLabel" type="Label" parent="Root" unique_id=872348279]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_right = 1.0
+offset_top = 50.0
+offset_bottom = 62.0
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(0.96, 0.93, 0.85, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.03, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+horizontal_alignment = 1
+
+[node name="CarryLabel" type="Label" parent="Root" unique_id=1548046682]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -30.0
+offset_right = 160.0
+offset_bottom = -20.0
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(0.96, 0.93, 0.85, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.03, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+
+[node name="PromptPanel" type="PanelContainer" parent="Root" unique_id=780604048]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -110.0
+offset_top = -17.0
+offset_right = 110.0
+offset_bottom = -3.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_l20r4")
+
+[node name="PromptLabel" type="Label" parent="Root/PromptPanel" unique_id=1812402448]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(0.96, 0.93, 0.85, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.03, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+horizontal_alignment = 1
+
+[node name="Dim" type="ColorRect" parent="Root" unique_id=461618149]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.55)
+
+[node name="CompletePanel" type="CenterContainer" parent="Root" unique_id=161161824]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="PanelContainer" parent="Root/CompletePanel" unique_id=10370707]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Root/CompletePanel/Panel" unique_id=1968317838]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="CompleteTitle" type="Label" parent="Root/CompletePanel/Panel/VBox" unique_id=1706140021]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_6ll6g")
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(1, 0.83, 0.38, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.03, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+text = "¡NIVEL COMPLETADO!"
+horizontal_alignment = 1
+
+[node name="StarsBox" type="HBoxContainer" parent="Root/CompletePanel/Panel/VBox" unique_id=93107443]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Star1" type="TextureRect" parent="Root/CompletePanel/Panel/VBox/StarsBox" unique_id=160205745]
+layout_mode = 2
+
+[node name="Star2" type="TextureRect" parent="Root/CompletePanel/Panel/VBox/StarsBox" unique_id=1729312577]
+layout_mode = 2
+
+[node name="Star3" type="TextureRect" parent="Root/CompletePanel/Panel/VBox/StarsBox" unique_id=344266844]
+layout_mode = 2
+
+[node name="CompleteStats" type="Label" parent="Root/CompletePanel/Panel/VBox" unique_id=1000354969]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(0.96, 0.93, 0.85, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.03, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="Root/CompletePanel/Panel/VBox" unique_id=1183116449]
+layout_mode = 2
+alignment = 1
+
+[node name="NextButton" type="Button" parent="Root/CompletePanel/Panel/VBox/Buttons" unique_id=1643698233]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 14)
+layout_mode = 2
+text = "Siguiente nivel"
+
+[node name="CompleteMenuButton" type="Button" parent="Root/CompletePanel/Panel/VBox/Buttons" unique_id=1098397334]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 14)
+layout_mode = 2
+text = "Menú"
+
+[node name="FailPanel" type="CenterContainer" parent="Root" unique_id=1847381200]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="PanelContainer" parent="Root/FailPanel" unique_id=1355334550]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Root/FailPanel/Panel" unique_id=888353230]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="FailTitle" type="Label" parent="Root/FailPanel/Panel/VBox" unique_id=2122291836]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_6ll6g")
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(1, 0.45, 0.45, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.03, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+text = "¡SE ACABÓ EL TIEMPO!"
+horizontal_alignment = 1
+
+[node name="FailText" type="Label" parent="Root/FailPanel/Panel/VBox" unique_id=905557595]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(0.96, 0.93, 0.85, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.03, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+text = "Las tareas quedaron a medias..."
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="Root/FailPanel/Panel/VBox" unique_id=78636210]
+layout_mode = 2
+alignment = 1
+
+[node name="RetryButton" type="Button" parent="Root/FailPanel/Panel/VBox/Buttons" unique_id=2042896082]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 14)
+layout_mode = 2
+text = "Reintentar"
+
+[node name="FailMenuButton" type="Button" parent="Root/FailPanel/Panel/VBox/Buttons" unique_id=1423846142]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 14)
+layout_mode = 2
+text = "Menú"

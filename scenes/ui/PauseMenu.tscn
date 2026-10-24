@@ -1,0 +1,74 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/PauseMenu.gd" id="1_7ida2"]
+[ext_resource type="FontFile" path="res://assets/fonts/press-start-2p.woff2" id="2_n5dsq"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=1960674560]
+layer = 20
+script = ExtResource("1_7ida2")
+
+[node name="Root" type="Control" parent="." unique_id=188639050]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Dim" type="ColorRect" parent="Root" unique_id=278914432]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.6)
+
+[node name="Center" type="CenterContainer" parent="Root" unique_id=1881576299]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="PanelContainer" parent="Root/Center" unique_id=1694904767]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Root/Center/Panel" unique_id=1082426500]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Header" type="Label" parent="Root/Center/Panel/VBox" unique_id=1675289161]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_n5dsq")
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(1, 0.83, 0.38, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.03, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+text = "PAUSA"
+horizontal_alignment = 1
+
+[node name="ObjectiveLabel" type="Label" parent="Root/Center/Panel/VBox" unique_id=205734577]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(0.75, 0.73, 0.85, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.03, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ResumeButton" type="Button" parent="Root/Center/Panel/VBox" unique_id=61623638]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 14)
+layout_mode = 2
+text = "Continuar"
+
+[node name="RestartButton" type="Button" parent="Root/Center/Panel/VBox" unique_id=621233099]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 14)
+layout_mode = 2
+text = "Reiniciar nivel"
+
+[node name="MenuButton" type="Button" parent="Root/Center/Panel/VBox" unique_id=1854740909]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 14)
+layout_mode = 2
+text = "Menú principal"

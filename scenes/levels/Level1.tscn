@@ -1,0 +1,491 @@
+[gd_scene format=4]
+
+[ext_resource type="Script" path="res://scripts/levels/Level.gd" id="1_pnxi5"]
+[ext_resource type="TileSet" path="res://assets/tiles/pixel_spaces_tileset.tres" id="2_vaqq6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/furniture/living_room/window_square.png" id="3_yfpbl"]
+[ext_resource type="Texture2D" path="res://assets/sprites/furniture/living_room/curtainrail.png" id="4_6qbjw"]
+[ext_resource type="Texture2D" path="res://assets/sprites/furniture/living_room/curtain_medium_red.png" id="5_o6odm"]
+[ext_resource type="Texture2D" path="res://assets/sprites/objects/bedroom/poster_1.png" id="6_6ufjk"]
+[ext_resource type="Texture2D" path="res://assets/sprites/objects/bedroom/clock_1_red.png" id="7_f2qns"]
+[ext_resource type="Texture2D" path="res://assets/sprites/objects/bedroom/calendar_2.png" id="8_1rn7u"]
+[ext_resource type="Texture2D" path="res://assets/sprites/furniture/living_room/shelf_medium.png" id="9_w15kl"]
+[ext_resource type="Texture2D" path="res://assets/sprites/objects/kitchen/hanging_cooking_pans.png" id="10_k4m0a"]
+[ext_resource type="Texture2D" path="res://assets/sprites/furniture/bathroom/mirror.png" id="11_nt11m"]
+[ext_resource type="Texture2D" path="res://assets/sprites/furniture/bathroom/towel_rail.png" id="12_g6pty"]
+[ext_resource type="Texture2D" path="res://assets/sprites/furniture/light_2.png" id="13_uoo8w"]
+[ext_resource type="Texture2D" path="res://assets/sprites/furniture/bedroom/lamp_stand_1.png" id="14_48pd3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/furniture/living_room/bookshelf_1.png" id="15_cun7r"]
+[ext_resource type="Texture2D" path="res://assets/sprites/furniture/bedroom/cabinet_1.png" id="16_buqmn"]
+[ext_resource type="Texture2D" path="res://assets/sprites/furniture/bedroom/drawer_medium_1_a.png" id="17_xuw4s"]
+[ext_resource type="Texture2D" path="res://assets/sprites/furniture/bedroom/lamp_bedroom_3.png" id="18_eve8w"]
+[ext_resource type="Texture2D" path="res://assets/sprites/furniture/bedroom/bed_red.png" id="19_dvoig"]
+[ext_resource type="Texture2D" path="res://assets/sprites/furniture/living_room/couch_large_blue.png" id="20_r2570"]
+[ext_resource type="Texture2D" path="res://assets/sprites/furniture/living_room/coffee_table_1.png" id="21_iqcit"]
+[ext_resource type="Texture2D" path="res://assets/sprites/objects/living_room/flowerpot_small_red.png" id="22_42pq3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/objects/living_room/flora_poppy.png" id="23_vp86x"]
+[ext_resource type="Texture2D" path="res://assets/sprites/furniture/kitchen/refrigerator_large_white.png" id="24_qoap7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/objects/kitchen/refrigerator_sticky_notes_1.png" id="25_56ngf"]
+[ext_resource type="Texture2D" path="res://assets/sprites/furniture/kitchen/sink.png" id="26_4tl47"]
+[ext_resource type="Texture2D" path="res://assets/sprites/objects/kitchen/oven.png" id="27_7xhkr"]
+[ext_resource type="Texture2D" path="res://assets/sprites/furniture/kitchen/countertop_end.png" id="28_rbo34"]
+[ext_resource type="Texture2D" path="res://assets/sprites/objects/kitchen/blender_blue.png" id="29_6rqps"]
+[ext_resource type="Texture2D" path="res://assets/sprites/furniture/bathroom/toilet.png" id="30_nc657"]
+[ext_resource type="Texture2D" path="res://assets/sprites/furniture/bathroom/sink_bathroom_2.png" id="31_eqvlh"]
+[ext_resource type="Texture2D" path="res://assets/sprites/furniture/bathroom/bathtub.png" id="32_8bk6j"]
+[ext_resource type="Texture2D" path="res://assets/sprites/objects/bathroom/bathtub_towel_red.png" id="33_326h4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/objects/living_room/flowerpot_medium_green.png" id="34_6gq0d"]
+[ext_resource type="Texture2D" path="res://assets/sprites/objects/living_room/flora_aloe.png" id="35_krp0h"]
+[ext_resource type="PackedScene" path="res://scenes/objects/PickupItem.tscn" id="36_7ryjh"]
+[ext_resource type="Script" path="res://scripts/world/PickupItem.gd" id="37_yu153"]
+[ext_resource type="Texture2D" path="res://assets/sprites/objects/living_room/books_outside_5.png" id="38_c8ttr"]
+[ext_resource type="Texture2D" path="res://assets/sprites/objects/bedroom/backpack_red.png" id="39_rdjtj"]
+[ext_resource type="Texture2D" path="res://assets/sprites/objects/bedroom/trophy.png" id="40_4tq7f"]
+[ext_resource type="Texture2D" path="res://assets/sprites/objects/kitchen/glass_pitcher_water.png" id="41_o0n0i"]
+[ext_resource type="Texture2D" path="res://assets/sprites/objects/bathroom/bath_towel_long_blue.png" id="42_2ec0r"]
+[ext_resource type="PackedScene" path="res://scenes/objects/DropZone.tscn" id="43_gxdv4"]
+[ext_resource type="Script" path="res://scripts/world/DropZone.gd" id="44_lxeg5"]
+[ext_resource type="PackedScene" path="res://scenes/player/Player.tscn" id="45_jbel4"]
+[ext_resource type="Script" path="res://scripts/player/Player.gd" id="46_7tjtu"]
+[ext_resource type="PackedScene" path="res://scenes/ui/HUD.tscn" id="47_yxhtm"]
+[ext_resource type="Script" path="res://scripts/ui/HUD.gd" id="48_h8cv6"]
+[ext_resource type="PackedScene" path="res://scenes/ui/PauseMenu.tscn" id="49_hgjv1"]
+[ext_resource type="Script" path="res://scripts/ui/PauseMenu.gd" id="50_28688"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rg3hr"]
+size = Vector2(9, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5oxat"]
+size = Vector2(12, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jm03b"]
+size = Vector2(12, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ha8ha"]
+size = Vector2(10, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1quwq"]
+size = Vector2(22, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eyiqg"]
+size = Vector2(28, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1uj0e"]
+size = Vector2(12, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tt37s"]
+size = Vector2(12, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jwqrc"]
+size = Vector2(12, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltsjf"]
+size = Vector2(12, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aj8iy"]
+size = Vector2(12, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujxs8"]
+size = Vector2(7, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4xu3o"]
+size = Vector2(8, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jo34g"]
+size = Vector2(17, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogyyb"]
+size = Vector2(5, 3)
+
+[node name="Level1" type="Node2D" unique_id=1624592530]
+script = ExtResource("1_pnxi5")
+level_title = "La Habitación"
+objective = "Ordena la casa: lleva los 5 objetos tirados a su lugar. Las siluetas indican dónde va cada uno."
+
+[node name="Ground" type="TileMapLayer" parent="." unique_id=1344634915]
+z_index = -10
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAEAAAABAAAAAAAAAAEAAAACAAAAAAAAAAEAAAADAAAAAAAAAAEAAAAEAAAAAAAAAAEAAAAFAAAAAAAAAAEAAAAGAAAAAAAAAAEAAAAHAAAAAAAAAAEAAAAIAAAAAAAAAAEAAAAJAAAAAAAAAAEAAAAKAAAAAAAAAAEAAAALAAAAAAAAAAEAAAAMAAAAAAAAAAEAAAANAAAAAAAAAAEAAAAOAAAAAAAAAAEAAAAPAAAAAAAAAAEAAAAQAAAAAAAAAAEAAAARAAAAAAAAAAEAAAASAAAAAAAAAAEAAAATAAAAAAAAAAEAAAAUAAAAAAAAAAEAAAAVAAAAAAAAAAEAAAAWAAAAAAAAAAEAAAAXAAAAAAAAAAEAAAAAAAEAAAAAAAEAAAABAAEAAAABAAEAAAACAAEAAAABAAEAAAADAAEAAAABAAEAAAAEAAEAAAABAAEAAAAFAAEAAAABAAEAAAAGAAEAAAABAAEAAAAHAAEAAAABAAEAAAAIAAEAAAABAAEAAAAJAAEAAAABAAEAAAAKAAEAAAABAAEAAAALAAEAAAABAAEAAAAMAAEAAAABAAEAAAANAAEAAAABAAEAAAAOAAEAAAABAAEAAAAPAAEAAAABAAEAAAAQAAEAAAABAAEAAAARAAEAAAABAAEAAAASAAEAAAABAAEAAAATAAEAAAABAAEAAAAUAAEAAAABAAEAAAAVAAEAAAABAAEAAAAWAAEAAAABAAEAAAAXAAEAAAAAAAEAAAAAAAIAAAAAAAEAAAABAAIAAAACAAEAAAACAAIAAAACAAEAAAADAAIAAAACAAEAAAAEAAIAAAACAAEAAAAFAAIAAAACAAEAAAAGAAIAAAACAAEAAAAHAAIAAAACAAEAAAAIAAIAAAACAAEAAAAJAAIAAAACAAEAAAAKAAIAAAACAAEAAAALAAIAAAACAAEAAAAMAAIAAAACAAEAAAANAAIAAAACAAEAAAAOAAIAAAACAAEAAAAPAAIAAAACAAEAAAAQAAIAAAACAAEAAAARAAIAAAACAAEAAAASAAIAAAACAAEAAAATAAIAAAACAAEAAAAUAAIAAAACAAEAAAAVAAIAAAACAAEAAAAWAAIAAAACAAEAAAAXAAIAAAAAAAEAAAAAAAMAAAAAAAEAAAABAAMAAAABAAAAAAACAAMAAAABAAAAAAADAAMAAAABAAAAAAAEAAMAAAABAAAAAAAFAAMAAAABAAAAAAAGAAMAAAABAAAAAAAHAAMAAAABAAAAAAAIAAMAAAABAAAAAAAJAAMAAAABAAAAAAAKAAMAAAABAAAAAAALAAMAAAABAAAAAAAMAAMAAAABAAAAAAANAAMAAAABAAAAAAAOAAMAAAABAAAAAAAPAAMAAAAAAAEAAAAQAAMAAAAEAAAAAAARAAMAAAAEAAAAAAASAAMAAAAEAAAAAAATAAMAAAAEAAAAAAAUAAMAAAAEAAAAAAAVAAMAAAAEAAAAAAAWAAMAAAAEAAAAAAAXAAMAAAAAAAEAAAAAAAQAAAAAAAEAAAABAAQAAAAAAAAAAAACAAQAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAJAAQAAAAAAAAAAAAKAAQAAAAAAAAAAAALAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAANAAQAAAAAAAAAAAAOAAQAAAAAAAAAAAAPAAQAAAAAAAEAAAAQAAQAAAAEAAAAAAARAAQAAAAEAAAAAAASAAQAAAAEAAAAAAATAAQAAAAEAAAAAAAUAAQAAAAEAAAAAAAVAAQAAAAEAAAAAAAWAAQAAAAEAAAAAAAXAAQAAAAAAAEAAAAAAAUAAAAAAAEAAAABAAUAAAABAAAAAAACAAUAAAABAAAAAAADAAUAAAABAAAAAAAEAAUAAAABAAAAAAAFAAUAAAABAAAAAAAGAAUAAAABAAAAAAAHAAUAAAABAAAAAAAIAAUAAAABAAAAAAAJAAUAAAABAAAAAAAKAAUAAAABAAAAAAALAAUAAAABAAAAAAAMAAUAAAABAAAAAAANAAUAAAABAAAAAAAOAAUAAAABAAAAAAAPAAUAAAAAAAEAAAAQAAUAAAAEAAAAAAARAAUAAAAEAAAAAAASAAUAAAAEAAAAAAATAAUAAAAEAAAAAAAUAAUAAAAEAAAAAAAVAAUAAAAEAAAAAAAWAAUAAAAEAAAAAAAXAAUAAAAAAAEAAAAAAAYAAAAAAAEAAAABAAYAAAAAAAAAAAACAAYAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAHAAYAAAAAAAAAAAAIAAYAAAAAAAAAAAAJAAYAAAAAAAAAAAAKAAYAAAAAAAAAAAALAAYAAAAAAAAAAAAMAAYAAAAAAAAAAAANAAYAAAAAAAAAAAAOAAYAAAAAAAAAAAAPAAYAAAAEAAAAAAAQAAYAAAAEAAAAAAARAAYAAAAEAAAAAAASAAYAAAAEAAAAAAATAAYAAAAEAAAAAAAUAAYAAAAEAAAAAAAVAAYAAAAEAAAAAAAWAAYAAAAEAAAAAAAXAAYAAAAAAAEAAAAAAAcAAAAAAAEAAAABAAcAAAABAAAAAAACAAcAAAABAAAAAAADAAcAAAABAAAAAAAEAAcAAAABAAAAAAAFAAcAAAABAAAAAAAGAAcAAAABAAAAAAAHAAcAAAABAAAAAAAIAAcAAAABAAAAAAAJAAcAAAABAAAAAAAKAAcAAAABAAAAAAALAAcAAAABAAAAAAAMAAcAAAABAAAAAAANAAcAAAABAAAAAAAOAAcAAAABAAAAAAAPAAcAAAAEAAAAAAAQAAcAAAAEAAAAAAARAAcAAAAEAAAAAAASAAcAAAAEAAAAAAATAAcAAAAEAAAAAAAUAAcAAAAEAAAAAAAVAAcAAAAEAAAAAAAWAAcAAAAEAAAAAAAXAAcAAAAAAAEAAAAAAAgAAAAAAAEAAAABAAgAAAAAAAAAAAACAAgAAAAAAAAAAAADAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAFAAgAAAAAAAAAAAAGAAgAAAAAAAAAAAAHAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAJAAgAAAAAAAAAAAAKAAgAAAAAAAAAAAALAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAANAAgAAAAAAAAAAAAOAAgAAAAAAAAAAAAPAAgAAAAEAAAAAAAQAAgAAAAEAAAAAAARAAgAAAAEAAAAAAASAAgAAAAEAAAAAAATAAgAAAAEAAAAAAAUAAgAAAAEAAAAAAAVAAgAAAAEAAAAAAAWAAgAAAAEAAAAAAAXAAgAAAAAAAEAAAAAAAkAAAAAAAEAAAABAAkAAAABAAAAAAACAAkAAAABAAAAAAADAAkAAAABAAAAAAAEAAkAAAABAAAAAAAFAAkAAAABAAAAAAAGAAkAAAABAAAAAAAHAAkAAAABAAAAAAAIAAkAAAABAAAAAAAJAAkAAAABAAAAAAAKAAkAAAABAAAAAAALAAkAAAABAAAAAAAMAAkAAAABAAAAAAANAAkAAAABAAAAAAAOAAkAAAABAAAAAAAPAAkAAAAEAAAAAAAQAAkAAAAEAAAAAAARAAkAAAAEAAAAAAASAAkAAAAEAAAAAAATAAkAAAAEAAAAAAAUAAkAAAAEAAAAAAAVAAkAAAAEAAAAAAAWAAkAAAAEAAAAAAAXAAkAAAAAAAEAAAAAAAoAAAAAAAEAAAABAAoAAAAAAAAAAAACAAoAAAAAAAAAAAADAAoAAAAAAAAAAAAEAAoAAAAAAAAAAAAFAAoAAAAAAAAAAAAGAAoAAAAAAAAAAAAHAAoAAAAAAAAAAAAIAAoAAAAAAAAAAAAJAAoAAAAAAAAAAAAKAAoAAAAAAAAAAAALAAoAAAAAAAAAAAAMAAoAAAAAAAAAAAANAAoAAAAAAAAAAAAOAAoAAAAAAAAAAAAPAAoAAAAEAAAAAAAQAAoAAAAEAAAAAAARAAoAAAAEAAAAAAASAAoAAAAEAAAAAAATAAoAAAAEAAAAAAAUAAoAAAAEAAAAAAAVAAoAAAAEAAAAAAAWAAoAAAAEAAAAAAAXAAoAAAAAAAEAAAAAAAsAAAAAAAEAAAABAAsAAAABAAAAAAACAAsAAAABAAAAAAADAAsAAAABAAAAAAAEAAsAAAABAAAAAAAFAAsAAAABAAAAAAAGAAsAAAABAAAAAAAHAAsAAAABAAAAAAAIAAsAAAABAAAAAAAJAAsAAAABAAAAAAAKAAsAAAABAAAAAAALAAsAAAABAAAAAAAMAAsAAAABAAAAAAANAAsAAAABAAAAAAAOAAsAAAABAAAAAAAPAAsAAAAEAAAAAAAQAAsAAAAEAAAAAAARAAsAAAAEAAAAAAASAAsAAAAEAAAAAAATAAsAAAAEAAAAAAAUAAsAAAAEAAAAAAAVAAsAAAAEAAAAAAAWAAsAAAAEAAAAAAAXAAsAAAAAAAEAAAAAAAwAAAAAAAEAAAABAAwAAAAAAAEAAAACAAwAAAAAAAEAAAADAAwAAAAAAAEAAAAEAAwAAAAAAAEAAAAFAAwAAAAAAAEAAAAGAAwAAAAAAAEAAAAHAAwAAAAAAAEAAAAIAAwAAAAAAAEAAAAJAAwAAAAAAAEAAAAKAAwAAAAAAAEAAAALAAwAAAAAAAEAAAAMAAwAAAAAAAEAAAANAAwAAAAAAAEAAAAOAAwAAAAAAAEAAAAPAAwAAAAAAAEAAAAQAAwAAAAAAAEAAAARAAwAAAAAAAEAAAASAAwAAAAAAAEAAAATAAwAAAAAAAEAAAAUAAwAAAAAAAEAAAAVAAwAAAAAAAEAAAAWAAwAAAAAAAEAAAAXAAwAAAAAAAEAAAA=")
+tile_set = ExtResource("2_vaqq6")
+
+[node name="Decor" type="Node2D" parent="." unique_id=901645831]
+z_index = -5
+
+[node name="WindowSquare" type="Sprite2D" parent="Decor" unique_id=694409994]
+position = Vector2(128, 29)
+texture = ExtResource("3_yfpbl")
+
+[node name="Curtainrail" type="Sprite2D" parent="Decor" unique_id=833485312]
+position = Vector2(128, 21)
+texture = ExtResource("4_6qbjw")
+
+[node name="CurtainMediumRed" type="Sprite2D" parent="Decor" unique_id=1969365809]
+position = Vector2(120, 29)
+texture = ExtResource("5_o6odm")
+
+[node name="@Sprite2D@14" type="Sprite2D" parent="Decor" unique_id=1887713122]
+position = Vector2(136, 29)
+texture = ExtResource("5_o6odm")
+
+[node name="Poster1" type="Sprite2D" parent="Decor" unique_id=1442706944]
+position = Vector2(166, 30)
+texture = ExtResource("6_6ufjk")
+
+[node name="Clock1Red" type="Sprite2D" parent="Decor" unique_id=1605287589]
+position = Vector2(196, 27)
+texture = ExtResource("7_f2qns")
+
+[node name="Calendar2" type="Sprite2D" parent="Decor" unique_id=528530731]
+position = Vector2(222, 30)
+texture = ExtResource("8_1rn7u")
+
+[node name="ShelfMedium" type="Sprite2D" parent="Decor" unique_id=1430040762]
+position = Vector2(96, 33)
+texture = ExtResource("9_w15kl")
+
+[node name="HangingCookingPans" type="Sprite2D" parent="Decor" unique_id=1345174267]
+position = Vector2(298, 30)
+texture = ExtResource("10_k4m0a")
+
+[node name="Mirror" type="Sprite2D" parent="Decor" unique_id=85055661]
+position = Vector2(352, 30)
+texture = ExtResource("11_nt11m")
+
+[node name="TowelRail" type="Sprite2D" parent="Decor" unique_id=2112941342]
+position = Vector2(336, 34)
+texture = ExtResource("12_g6pty")
+
+[node name="Light2" type="Sprite2D" parent="Decor" unique_id=715681420]
+position = Vector2(150, 19)
+texture = ExtResource("13_uoo8w")
+
+[node name="Entities" type="Node2D" parent="." unique_id=771460313]
+y_sort_enabled = true
+
+[node name="Furniture" type="Node2D" parent="Entities" unique_id=1349408066]
+y_sort_enabled = true
+
+[node name="LampStand1" type="StaticBody2D" parent="Entities/Furniture" unique_id=1647977963]
+position = Vector2(26, 58)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Entities/Furniture/LampStand1" unique_id=1832716436]
+texture = ExtResource("14_48pd3")
+centered = false
+offset = Vector2(-5, -22)
+
+[node name="@CollisionShape2D@15" type="CollisionShape2D" parent="Entities/Furniture/LampStand1" unique_id=484477674]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_rg3hr")
+
+[node name="Bookshelf1" type="StaticBody2D" parent="Entities/Furniture" unique_id=1548092133]
+position = Vector2(48, 58)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Entities/Furniture/Bookshelf1" unique_id=804816988]
+texture = ExtResource("15_cun7r")
+centered = false
+offset = Vector2(-7, -23)
+
+[node name="@CollisionShape2D@16" type="CollisionShape2D" parent="Entities/Furniture/Bookshelf1" unique_id=847399915]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_5oxat")
+
+[node name="Cabinet1" type="StaticBody2D" parent="Entities/Furniture" unique_id=843126879]
+position = Vector2(70, 58)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Entities/Furniture/Cabinet1" unique_id=676510174]
+texture = ExtResource("16_buqmn")
+centered = false
+offset = Vector2(-7, -23)
+
+[node name="@CollisionShape2D@17" type="CollisionShape2D" parent="Entities/Furniture/Cabinet1" unique_id=1579575446]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_jm03b")
+
+[node name="DrawerMedium1A" type="StaticBody2D" parent="Entities/Furniture" unique_id=697518166]
+position = Vector2(96, 58)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Entities/Furniture/DrawerMedium1A" unique_id=90880938]
+texture = ExtResource("17_xuw4s")
+centered = false
+offset = Vector2(-6, -13)
+
+[node name="@CollisionShape2D@18" type="CollisionShape2D" parent="Entities/Furniture/DrawerMedium1A" unique_id=1327842400]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_ha8ha")
+
+[node name="Lamp" type="Sprite2D" parent="Entities/Furniture/DrawerMedium1A" unique_id=396814665]
+position = Vector2(0, -13)
+texture = ExtResource("18_eve8w")
+centered = false
+offset = Vector2(-5, -7)
+
+[node name="BedRed" type="StaticBody2D" parent="Entities/Furniture" unique_id=1609144983]
+position = Vector2(30, 112)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Entities/Furniture/BedRed" unique_id=849203397]
+texture = ExtResource("19_dvoig")
+centered = false
+offset = Vector2(-12, -13)
+
+[node name="@CollisionShape2D@19" type="CollisionShape2D" parent="Entities/Furniture/BedRed" unique_id=229498430]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_1quwq")
+
+[node name="CouchLargeBlue" type="StaticBody2D" parent="Entities/Furniture" unique_id=1050975742]
+position = Vector2(150, 150)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Entities/Furniture/CouchLargeBlue" unique_id=969521019]
+texture = ExtResource("20_r2570")
+centered = false
+offset = Vector2(-15, -13)
+
+[node name="@CollisionShape2D@20" type="CollisionShape2D" parent="Entities/Furniture/CouchLargeBlue" unique_id=1168622508]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_eyiqg")
+
+[node name="CoffeeTable1" type="StaticBody2D" parent="Entities/Furniture" unique_id=416681675]
+position = Vector2(150, 172)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Entities/Furniture/CoffeeTable1" unique_id=1870192296]
+texture = ExtResource("21_iqcit")
+centered = false
+offset = Vector2(-7, -7)
+
+[node name="@CollisionShape2D@21" type="CollisionShape2D" parent="Entities/Furniture/CoffeeTable1" unique_id=1492202660]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_1uj0e")
+
+[node name="Pot" type="Sprite2D" parent="Entities/Furniture/CoffeeTable1" unique_id=1854037738]
+position = Vector2(0, -7)
+texture = ExtResource("22_42pq3")
+centered = false
+offset = Vector2(-2, -3)
+
+[node name="Flower" type="Sprite2D" parent="Entities/Furniture/CoffeeTable1" unique_id=806486008]
+position = Vector2(0, -10)
+texture = ExtResource("23_vp86x")
+centered = false
+offset = Vector2(-2, -5)
+
+[node name="RefrigeratorLargeWhite" type="StaticBody2D" parent="Entities/Furniture" unique_id=1277936761]
+position = Vector2(266, 58)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Entities/Furniture/RefrigeratorLargeWhite" unique_id=107519049]
+texture = ExtResource("24_qoap7")
+centered = false
+offset = Vector2(-7, -23)
+
+[node name="@CollisionShape2D@22" type="CollisionShape2D" parent="Entities/Furniture/RefrigeratorLargeWhite" unique_id=737424585]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_tt37s")
+
+[node name="Notes" type="Sprite2D" parent="Entities/Furniture/RefrigeratorLargeWhite" unique_id=1759811605]
+position = Vector2(2, -9)
+texture = ExtResource("25_56ngf")
+centered = false
+offset = Vector2(-3, -9)
+
+[node name="Sink" type="StaticBody2D" parent="Entities/Furniture" unique_id=1203757153]
+position = Vector2(282, 58)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Entities/Furniture/Sink" unique_id=605473992]
+texture = ExtResource("26_4tl47")
+centered = false
+offset = Vector2(-7, -10)
+
+[node name="@CollisionShape2D@23" type="CollisionShape2D" parent="Entities/Furniture/Sink" unique_id=1076327637]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_jwqrc")
+
+[node name="Oven" type="StaticBody2D" parent="Entities/Furniture" unique_id=1792759542]
+position = Vector2(296, 58)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Entities/Furniture/Oven" unique_id=707190764]
+texture = ExtResource("27_7xhkr")
+centered = false
+offset = Vector2(-7, -10)
+
+[node name="@CollisionShape2D@24" type="CollisionShape2D" parent="Entities/Furniture/Oven" unique_id=201397234]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_ltsjf")
+
+[node name="CountertopEnd" type="StaticBody2D" parent="Entities/Furniture" unique_id=1980865851]
+position = Vector2(310, 58)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Entities/Furniture/CountertopEnd" unique_id=868075159]
+texture = ExtResource("28_rbo34")
+centered = false
+offset = Vector2(-7, -7)
+
+[node name="@CollisionShape2D@25" type="CollisionShape2D" parent="Entities/Furniture/CountertopEnd" unique_id=2119112730]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_aj8iy")
+
+[node name="Blender" type="Sprite2D" parent="Entities/Furniture/CountertopEnd" unique_id=1988301488]
+position = Vector2(1, -7)
+texture = ExtResource("29_6rqps")
+centered = false
+offset = Vector2(-4, -8)
+
+[node name="Toilet" type="StaticBody2D" parent="Entities/Furniture" unique_id=1987923754]
+position = Vector2(336, 58)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Entities/Furniture/Toilet" unique_id=198120344]
+texture = ExtResource("30_nc657")
+centered = false
+offset = Vector2(-4, -11)
+
+[node name="@CollisionShape2D@26" type="CollisionShape2D" parent="Entities/Furniture/Toilet" unique_id=1737098455]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_ujxs8")
+
+[node name="SinkBathroom2" type="StaticBody2D" parent="Entities/Furniture" unique_id=2071156966]
+position = Vector2(352, 58)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Entities/Furniture/SinkBathroom2" unique_id=1047667519]
+texture = ExtResource("31_eqvlh")
+centered = false
+offset = Vector2(-5, -11)
+
+[node name="@CollisionShape2D@27" type="CollisionShape2D" parent="Entities/Furniture/SinkBathroom2" unique_id=1838062642]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_4xu3o")
+
+[node name="Bathtub" type="StaticBody2D" parent="Entities/Furniture" unique_id=2019432381]
+position = Vector2(350, 120)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Entities/Furniture/Bathtub" unique_id=2085286798]
+texture = ExtResource("32_8bk6j")
+centered = false
+offset = Vector2(-9, -10)
+
+[node name="@CollisionShape2D@28" type="CollisionShape2D" parent="Entities/Furniture/Bathtub" unique_id=1406011713]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_jo34g")
+
+[node name="Towel" type="Sprite2D" parent="Entities/Furniture/Bathtub" unique_id=2018381505]
+position = Vector2(-6, -8)
+texture = ExtResource("33_326h4")
+centered = false
+offset = Vector2(-2, -5)
+
+[node name="FlowerpotMediumGreen" type="StaticBody2D" parent="Entities/Furniture" unique_id=111966599]
+position = Vector2(228, 182)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Entities/Furniture/FlowerpotMediumGreen" unique_id=1845085387]
+texture = ExtResource("34_6gq0d")
+centered = false
+offset = Vector2(-3, -3)
+
+[node name="@CollisionShape2D@29" type="CollisionShape2D" parent="Entities/Furniture/FlowerpotMediumGreen" unique_id=1500198862]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_ogyyb")
+
+[node name="Aloe" type="Sprite2D" parent="Entities/Furniture/FlowerpotMediumGreen" unique_id=1603991433]
+position = Vector2(0, -3)
+texture = ExtResource("35_krp0h")
+centered = false
+offset = Vector2(-5, -8)
+
+[node name="Items" type="Node2D" parent="Entities" unique_id=749476423]
+y_sort_enabled = true
+
+[node name="PickupBooks" type="Area2D" parent="Entities/Items" unique_id=1701676544 instance=ExtResource("36_7ryjh")]
+position = Vector2(186, 178)
+script = ExtResource("37_yu153")
+item_id = "books"
+display_name = "Libros"
+texture = ExtResource("38_c8ttr")
+
+[node name="PickupBackpack" type="Area2D" parent="Entities/Items" unique_id=1235682785 instance=ExtResource("36_7ryjh")]
+position = Vector2(304, 168)
+script = ExtResource("37_yu153")
+item_id = "backpack"
+display_name = "Mochila"
+texture = ExtResource("39_rdjtj")
+
+[node name="PickupTrophy" type="Area2D" parent="Entities/Items" unique_id=2118068997 instance=ExtResource("36_7ryjh")]
+position = Vector2(62, 152)
+script = ExtResource("37_yu153")
+item_id = "trophy"
+display_name = "Trofeo"
+texture = ExtResource("40_4tq7f")
+
+[node name="PickupPitcher" type="Area2D" parent="Entities/Items" unique_id=1981857559 instance=ExtResource("36_7ryjh")]
+position = Vector2(112, 118)
+script = ExtResource("37_yu153")
+item_id = "pitcher"
+display_name = "Jarra"
+texture = ExtResource("41_o0n0i")
+
+[node name="PickupTowel" type="Area2D" parent="Entities/Items" unique_id=1400976113 instance=ExtResource("36_7ryjh")]
+position = Vector2(214, 132)
+script = ExtResource("37_yu153")
+item_id = "towel"
+display_name = "Toalla"
+texture = ExtResource("42_2ec0r")
+
+[node name="Tasks" type="Node2D" parent="Entities" unique_id=125974203]
+y_sort_enabled = true
+
+[node name="DropElLibrero" type="Area2D" parent="Entities/Tasks" unique_id=1067292793 instance=ExtResource("43_gxdv4")]
+position = Vector2(48, 64)
+script = ExtResource("44_lxeg5")
+accepts_item = "books"
+zone_name = "el librero"
+ghost_texture = ExtResource("38_c8ttr")
+
+[node name="DropElArmario" type="Area2D" parent="Entities/Tasks" unique_id=1596878966 instance=ExtResource("43_gxdv4")]
+position = Vector2(70, 64)
+script = ExtResource("44_lxeg5")
+accepts_item = "backpack"
+zone_name = "el armario"
+ghost_texture = ExtResource("39_rdjtj")
+
+[node name="DropLaRepisa" type="Area2D" parent="Entities/Tasks" unique_id=1877777175 instance=ExtResource("43_gxdv4")]
+position = Vector2(96, 64)
+script = ExtResource("44_lxeg5")
+accepts_item = "trophy"
+zone_name = "la repisa"
+ghost_texture = ExtResource("40_4tq7f")
+
+[node name="DropElFregadero" type="Area2D" parent="Entities/Tasks" unique_id=643726784 instance=ExtResource("43_gxdv4")]
+position = Vector2(282, 64)
+script = ExtResource("44_lxeg5")
+accepts_item = "pitcher"
+zone_name = "el fregadero"
+ghost_texture = ExtResource("41_o0n0i")
+
+[node name="DropElToallero" type="Area2D" parent="Entities/Tasks" unique_id=1094089866 instance=ExtResource("43_gxdv4")]
+position = Vector2(336, 66)
+script = ExtResource("44_lxeg5")
+accepts_item = "towel"
+zone_name = "el toallero"
+ghost_texture = ExtResource("42_2ec0r")
+
+[node name="Player" type="CharacterBody2D" parent="Entities" unique_id=1366678235 instance=ExtResource("45_jbel4")]
+position = Vector2(180, 110)
+collision_layer = 2
+motion_mode = 1
+script = ExtResource("46_7tjtu")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1909478756 instance=ExtResource("47_yxhtm")]
+layer = 10
+script = ExtResource("48_h8cv6")
+
+[node name="PauseMenu" type="CanvasLayer" parent="." unique_id=1960674560 instance=ExtResource("49_hgjv1")]
+layer = 20
+script = ExtResource("50_28688")

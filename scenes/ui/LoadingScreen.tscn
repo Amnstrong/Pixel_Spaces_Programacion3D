@@ -1,0 +1,90 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/LoadingScreen.gd" id="1_n2vsc"]
+[ext_resource type="FontFile" path="res://assets/fonts/press-start-2p.woff2" id="2_0l1xk"]
+[ext_resource type="SpriteFrames" path="res://assets/sprites/characters/male_frames.tres" id="3_jr15b"]
+
+[node name="LoadingScreen" type="Control" unique_id=1237043681]
+layout_mode = 3
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_n2vsc")
+
+[node name="Background" type="ColorRect" parent="." unique_id=770826501]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.1, 0.08, 0.14, 1)
+
+[node name="Center" type="CenterContainer" parent="." unique_id=489329099]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBox" type="VBoxContainer" parent="Center" unique_id=1475509895]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Title" type="Label" parent="Center/VBox" unique_id=1347354131]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0l1xk")
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(1, 0.83, 0.38, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.03, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+text = "PIXEL SPACES MANAGER"
+horizontal_alignment = 1
+
+[node name="RunnerSpace" type="Control" parent="Center/VBox" unique_id=460039210]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Center/VBox" unique_id=911639707]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 8)
+layout_mode = 2
+show_percentage = false
+
+[node name="PercentLabel" type="Label" parent="Center/VBox" unique_id=2136427957]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(0.96, 0.93, 0.85, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.03, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+text = "0%"
+horizontal_alignment = 1
+
+[node name="LoadingLabel" type="Label" parent="Center/VBox" unique_id=1769652110]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(0.96, 0.93, 0.85, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.03, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+text = "Cargando..."
+horizontal_alignment = 1
+
+[node name="TipLabel" type="Label" parent="Center/VBox" unique_id=1636601522]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(0.7, 0.68, 0.8, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.03, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Runner" type="AnimatedSprite2D" parent="." unique_id=1769232377]
+unique_name_in_owner = true
+position = Vector2(70, 80)
+sprite_frames = ExtResource("3_jr15b")
+animation = &"walk"
+autoplay = "walk"
+offset = Vector2(0, -8)

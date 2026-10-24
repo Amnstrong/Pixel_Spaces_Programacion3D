@@ -1,0 +1,480 @@
+[gd_scene format=4]
+
+[ext_resource type="Script" path="res://scripts/ui/MainMenu.gd" id="1_qjd48"]
+[ext_resource type="Script" path="res://scripts/world/CloudDrift.gd" id="2_ff4wq"]
+[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/cloud_1.png" id="3_nqw28"]
+[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/cloud_small_3.png" id="4_7uy2f"]
+[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/mountain_large_1.png" id="5_0oadh"]
+[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/mountain_small_1.png" id="6_ayd4e"]
+[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/mountain_medium_1.png" id="7_3da5a"]
+[ext_resource type="TileSet" path="res://assets/tiles/pixel_spaces_tileset.tres" id="8_8rx73"]
+[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/house_large_red.png" id="9_ns3en"]
+[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/tree_medium.png" id="10_ybqsv"]
+[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/house_small_beige.png" id="11_1fge5"]
+[ext_resource type="SpriteFrames" path="res://assets/sprites/characters/male_frames.tres" id="12_utjo4"]
+[ext_resource type="SpriteFrames" path="res://assets/sprites/characters/female_frames.tres" id="13_dq25m"]
+[ext_resource type="FontFile" path="res://assets/fonts/press-start-2p.woff2" id="14_jfpbv"]
+
+[sub_resource type="Gradient" id="Gradient_whkpc"]
+colors = PackedColorArray(0.36, 0.56, 0.86, 1, 0.78, 0.9, 0.98, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wyc10"]
+gradient = SubResource("Gradient_whkpc")
+width = 4
+fill_to = Vector2(0, 1)
+
+[node name="MainMenu" type="Control" unique_id=1361581366]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qjd48")
+
+[node name="Sky" type="TextureRect" parent="." unique_id=62756490]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource("GradientTexture2D_wyc10")
+expand_mode = 1
+
+[node name="Scenery" type="Node2D" parent="." unique_id=1553817945]
+
+[node name="Clouds" type="Node2D" parent="Scenery" unique_id=918188989]
+script = ExtResource("2_ff4wq")
+
+[node name="Cloud1" type="Sprite2D" parent="Scenery/Clouds" unique_id=940617712]
+position = Vector2(30, 34)
+texture = ExtResource("3_nqw28")
+
+[node name="CloudSmall3" type="Sprite2D" parent="Scenery/Clouds" unique_id=1092484650]
+position = Vector2(120, 52)
+texture = ExtResource("4_7uy2f")
+
+[node name="@Sprite2D@11" type="Sprite2D" parent="Scenery/Clouds" unique_id=1423748629]
+position = Vector2(230, 26)
+texture = ExtResource("3_nqw28")
+
+[node name="@Sprite2D@12" type="Sprite2D" parent="Scenery/Clouds" unique_id=1268945507]
+position = Vector2(300, 60)
+texture = ExtResource("4_7uy2f")
+
+[node name="MountainLarge1" type="Sprite2D" parent="Scenery" unique_id=153457964]
+position = Vector2(55, 146)
+texture = ExtResource("5_0oadh")
+centered = false
+offset = Vector2(-79, -87)
+
+[node name="MountainSmall1" type="Sprite2D" parent="Scenery" unique_id=2120870220]
+position = Vector2(160, 146)
+texture = ExtResource("6_ayd4e")
+centered = false
+offset = Vector2(-60, -63)
+
+[node name="MountainMedium1" type="Sprite2D" parent="Scenery" unique_id=1053280818]
+position = Vector2(268, 146)
+texture = ExtResource("7_3da5a")
+centered = false
+offset = Vector2(-71, -77)
+
+[node name="Ground" type="TileMapLayer" parent="Scenery" unique_id=624039966]
+tile_map_data = PackedByteArray("AAAAAAkAAAAHAAAAAAABAAkAAAAHAAAAAAACAAkAAAAHAAAAAAADAAkAAAAHAAAAAAAEAAkAAAAHAAAAAAAFAAkAAAAHAAAAAAAGAAkAAAAHAAAAAAAHAAkAAAAHAAAAAAAIAAkAAAAHAAAAAAAJAAkAAAAHAAAAAAAKAAkAAAAHAAAAAAALAAkAAAAHAAAAAAAMAAkAAAAHAAAAAAANAAkAAAAHAAAAAAAOAAkAAAAHAAAAAAAPAAkAAAAHAAAAAAAQAAkAAAAHAAAAAAARAAkAAAAHAAAAAAASAAkAAAAHAAAAAAATAAkAAAAHAAAAAAAAAAoAAAAIAAAAAAABAAoAAAAIAAAAAAACAAoAAAAJAAAAAAADAAoAAAAIAAAAAAAEAAoAAAAIAAAAAAAFAAoAAAAIAAAAAAAGAAoAAAAIAAAAAAAHAAoAAAAJAAAAAAAIAAoAAAAIAAAAAAAJAAoAAAAIAAAAAAAKAAoAAAAIAAAAAAALAAoAAAAIAAAAAAAMAAoAAAAIAAAAAAANAAoAAAAIAAAAAAAOAAoAAAAIAAAAAAAPAAoAAAAIAAAAAAAQAAoAAAAIAAAAAAARAAoAAAAIAAAAAAASAAoAAAAIAAAAAAATAAoAAAAIAAAAAAAAAAsAAAAIAAAAAAABAAsAAAAIAAAAAAACAAsAAAAIAAAAAAADAAsAAAAIAAAAAAAEAAsAAAAIAAAAAAAFAAsAAAAIAAAAAAAGAAsAAAAIAAAAAAAHAAsAAAAIAAAAAAAIAAsAAAAJAAAAAAAJAAsAAAAJAAAAAAAKAAsAAAAIAAAAAAALAAsAAAAJAAAAAAAMAAsAAAAIAAAAAAANAAsAAAAJAAAAAAAOAAsAAAAIAAAAAAAPAAsAAAAIAAAAAAAQAAsAAAAJAAAAAAARAAsAAAAJAAAAAAASAAsAAAAIAAAAAAATAAsAAAAIAAAAAAA=")
+tile_set = ExtResource("8_8rx73")
+
+[node name="HouseLargeRed" type="Sprite2D" parent="Scenery" unique_id=1675786923]
+position = Vector2(52, 147)
+texture = ExtResource("9_ns3en")
+centered = false
+offset = Vector2(-47, -56)
+
+[node name="TreeMedium" type="Sprite2D" parent="Scenery" unique_id=1296141131]
+position = Vector2(118, 147)
+texture = ExtResource("10_ybqsv")
+centered = false
+offset = Vector2(-18, -50)
+
+[node name="@Sprite2D@13" type="Sprite2D" parent="Scenery" unique_id=2060849560]
+position = Vector2(212, 147)
+texture = ExtResource("10_ybqsv")
+centered = false
+offset = Vector2(-18, -50)
+
+[node name="HouseSmallBeige" type="Sprite2D" parent="Scenery" unique_id=666194921]
+position = Vector2(268, 147)
+texture = ExtResource("11_1fge5")
+centered = false
+offset = Vector2(-39, -40)
+
+[node name="Hero" type="AnimatedSprite2D" parent="Scenery" unique_id=1823061144]
+position = Vector2(104, 172)
+sprite_frames = ExtResource("12_utjo4")
+animation = &"idle"
+autoplay = "idle"
+offset = Vector2(0, -8)
+
+[node name="Npc" type="AnimatedSprite2D" parent="Scenery" unique_id=1880438722]
+position = Vector2(226, 174)
+sprite_frames = ExtResource("13_dq25m")
+animation = &"idle"
+autoplay = "idle"
+offset = Vector2(0, -8)
+flip_h = true
+
+[node name="Title" type="Control" parent="." unique_id=1578124606]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 60.0
+mouse_filter = 2
+
+[node name="VBox" type="VBoxContainer" parent="Title" unique_id=1996381644]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 8.0
+theme_override_constants/separation = 3
+
+[node name="TitleLine1" type="Label" parent="Title/VBox" unique_id=544709989]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("14_jfpbv")
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(1, 0.83, 0.38, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.03, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+text = "PIXEL SPACES"
+horizontal_alignment = 1
+
+[node name="TitleLine2" type="Label" parent="Title/VBox" unique_id=554731273]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("14_jfpbv")
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(0.96, 0.93, 0.85, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.03, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+text = "MANAGER"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Title/VBox" unique_id=639977606]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(0.16, 0.13, 0.25, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.03, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+text = "Room Decorator & Delivery"
+horizontal_alignment = 1
+
+[node name="MenuArea" type="Control" parent="." unique_id=492600220]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_top = 56.0
+offset_right = 320.0
+offset_bottom = 160.0
+
+[node name="Center" type="CenterContainer" parent="MenuArea" unique_id=743638609]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MainPanel" type="PanelContainer" parent="MenuArea/Center" unique_id=1194870579]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="MenuArea/Center/MainPanel" unique_id=1668648760]
+layout_mode = 2
+
+[node name="PlayerRow" type="HBoxContainer" parent="MenuArea/Center/MainPanel/VBox" unique_id=325500957]
+layout_mode = 2
+alignment = 1
+
+[node name="PlayerLabel" type="Label" parent="MenuArea/Center/MainPanel/VBox/PlayerRow" unique_id=435960933]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(1, 0.83, 0.38, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.03, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+text = "Jugador: -"
+horizontal_alignment = 1
+
+[node name="ChangeNameButton" type="Button" parent="MenuArea/Center/MainPanel/VBox/PlayerRow" unique_id=327603660]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(46, 12)
+layout_mode = 2
+text = "Cambiar"
+
+[node name="PlayButton" type="Button" parent="MenuArea/Center/MainPanel/VBox" unique_id=1123998757]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 14)
+layout_mode = 2
+text = "Jugar"
+
+[node name="LevelsButton" type="Button" parent="MenuArea/Center/MainPanel/VBox" unique_id=127096286]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 14)
+layout_mode = 2
+text = "Selección de Nivel"
+
+[node name="RankingButton" type="Button" parent="MenuArea/Center/MainPanel/VBox" unique_id=1225346925]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 14)
+layout_mode = 2
+text = "Ranking"
+
+[node name="QuitButton" type="Button" parent="MenuArea/Center/MainPanel/VBox" unique_id=175324275]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 14)
+layout_mode = 2
+text = "Salir"
+
+[node name="LevelSelect" type="CenterContainer" parent="." unique_id=1770606401]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="PanelContainer" parent="LevelSelect" unique_id=39548161]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="LevelSelect/Panel" unique_id=778750061]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="Header" type="Label" parent="LevelSelect/Panel/VBox" unique_id=2129338440]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("14_jfpbv")
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(1, 0.83, 0.38, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.03, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+text = "SELECCIONA NIVEL"
+horizontal_alignment = 1
+
+[node name="LevelGrid" type="GridContainer" parent="LevelSelect/Panel/VBox" unique_id=2056625848]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 2
+columns = 5
+
+[node name="LevelInfo" type="Label" parent="LevelSelect/Panel/VBox" unique_id=26472670]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(0.96, 0.93, 0.85, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.03, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="LevelSelect/Panel/VBox" unique_id=379933035]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 14)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Volver"
+
+[node name="NamePanel" type="CenterContainer" parent="." unique_id=1199791208]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="PanelContainer" parent="NamePanel" unique_id=552242605]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="NamePanel/Panel" unique_id=1297466349]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Header" type="Label" parent="NamePanel/Panel/VBox" unique_id=1898855532]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("14_jfpbv")
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(1, 0.83, 0.38, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.03, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+text = "USUARIOS"
+horizontal_alignment = 1
+
+[node name="Hint" type="Label" parent="NamePanel/Panel/VBox" unique_id=1993623197]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(0.96, 0.93, 0.85, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.03, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+text = "Elige tu usuario o escribe uno nuevo"
+horizontal_alignment = 1
+
+[node name="UserScroll" type="ScrollContainer" parent="NamePanel/Panel/VBox" unique_id=1788710260]
+custom_minimum_size = Vector2(220, 62)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="UserList" type="VBoxContainer" parent="NamePanel/Panel/VBox/UserScroll" unique_id=1228139176]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="NameEdit" type="LineEdit" parent="NamePanel/Panel/VBox" unique_id=571965477]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 14)
+layout_mode = 2
+placeholder_text = "Nombre de usuario"
+alignment = 1
+max_length = 16
+
+[node name="NameInfo" type="Label" parent="NamePanel/Panel/VBox" unique_id=1409706337]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(0.7, 0.68, 0.8, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.03, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="NamePanel/Panel/VBox" unique_id=157242442]
+layout_mode = 2
+alignment = 1
+
+[node name="NameOkButton" type="Button" parent="NamePanel/Panel/VBox/Buttons" unique_id=572692962]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 14)
+layout_mode = 2
+text = "Entrar"
+
+[node name="NameCancelButton" type="Button" parent="NamePanel/Panel/VBox/Buttons" unique_id=343500015]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 14)
+layout_mode = 2
+text = "Cancelar"
+
+[node name="MenuToast" type="Label" parent="." unique_id=1724383862]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 4.0
+offset_top = 169.0
+offset_right = 316.0
+offset_bottom = 180.0
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(1, 0.83, 0.38, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.03, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+horizontal_alignment = 1
+
+[node name="RankingPanel" type="CenterContainer" parent="." unique_id=1934666232]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="PanelContainer" parent="RankingPanel" unique_id=1143555870]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="RankingPanel/Panel" unique_id=1664132431]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Header" type="Label" parent="RankingPanel/Panel/VBox" unique_id=1997192302]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("14_jfpbv")
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(1, 0.83, 0.38, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.03, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+text = "RANKING"
+horizontal_alignment = 1
+
+[node name="Nav" type="HBoxContainer" parent="RankingPanel/Panel/VBox" unique_id=326164684]
+layout_mode = 2
+alignment = 1
+
+[node name="PrevButton" type="Button" parent="RankingPanel/Panel/VBox/Nav" unique_id=1524837304]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(22, 14)
+layout_mode = 2
+text = "<"
+
+[node name="ViewLabel" type="Label" parent="RankingPanel/Panel/VBox/Nav" unique_id=656658733]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(0.96, 0.93, 0.85, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.03, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+text = "General"
+horizontal_alignment = 1
+
+[node name="NextButton" type="Button" parent="RankingPanel/Panel/VBox/Nav" unique_id=989217830]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(22, 14)
+layout_mode = 2
+text = ">"
+
+[node name="RankGrid" type="GridContainer" parent="RankingPanel/Panel/VBox" unique_id=775430413]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 1
+columns = 4
+
+[node name="RankEmpty" type="Label" parent="RankingPanel/Panel/VBox" unique_id=2140099742]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(0.7, 0.68, 0.8, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.03, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+text = "Aún no hay partidas ganadas."
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="RankingPanel/Panel/VBox" unique_id=1142363491]
+layout_mode = 2
+alignment = 1
+
+[node name="OpenFolderButton" type="Button" parent="RankingPanel/Panel/VBox/Buttons" unique_id=1321952058]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(92, 14)
+layout_mode = 2
+text = "Carpeta de datos"
+
+[node name="DashboardButton" type="Button" parent="RankingPanel/Panel/VBox/Buttons" unique_id=1996768776]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(66, 14)
+layout_mode = 2
+text = "Dashboard"
+
+[node name="RankBackButton" type="Button" parent="RankingPanel/Panel/VBox/Buttons" unique_id=408056860]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(56, 14)
+layout_mode = 2
+text = "Volver"
+
+[node name="Credits" type="Label" parent="." unique_id=1666816579]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 169.0
+offset_right = 316.0
+offset_bottom = 180.0
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(0.95, 0.95, 0.9, 1)
+theme_override_colors/font_shadow_color = Color(0.05, 0.03, 0.08, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+text = "Arte: Pixel Spaces de Netherzapdos"
+horizontal_alignment = 2

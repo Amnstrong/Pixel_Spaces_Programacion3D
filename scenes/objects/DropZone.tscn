@@ -1,0 +1,15 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/world/DropZone.gd" id="1_lw5au"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_up63y"]
+radius = 11.0
+
+[node name="DropZone" type="Area2D" unique_id=1067292793]
+script = ExtResource("1_lw5au")
+
+[node name="Slot" type="Sprite2D" parent="." unique_id=1763695586]
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=538783415]
+shape = SubResource("CircleShape2D_up63y")

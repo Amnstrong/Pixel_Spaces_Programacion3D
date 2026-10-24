@@ -1,0 +1,29 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/world/Hazard.gd" id="1_qxxw4"]
+[ext_resource type="Texture2D" path="res://assets/ui/shadow.png" id="2_3umcu"]
+[ext_resource type="SpriteFrames" path="res://assets/sprites/characters/female_frames.tres" id="3_7lxpn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mkd7f"]
+size = Vector2(8, 6)
+
+[node name="Pedestrian" type="Area2D" unique_id=1769605626]
+script = ExtResource("1_qxxw4")
+speed = 25.0
+wrap_around = false
+time_penalty = 3.0
+hit_message = "¡Choque con un peatón! -3s"
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=215234620]
+position = Vector2(0, -1)
+texture = ExtResource("2_3umcu")
+
+[node name="Visual" type="AnimatedSprite2D" parent="." unique_id=169880045]
+sprite_frames = ExtResource("3_7lxpn")
+animation = &"walk"
+autoplay = "walk"
+offset = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1949622690]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_mkd7f")

@@ -1,0 +1,48 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/player/Player.gd" id="1_4kuee"]
+[ext_resource type="Texture2D" path="res://assets/ui/shadow.png" id="2_524rm"]
+[ext_resource type="SpriteFrames" path="res://assets/sprites/characters/male_frames.tres" id="3_tpg5x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3xxp"]
+size = Vector2(8, 5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_npwbq"]
+radius = 15.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1366678235]
+collision_layer = 2
+motion_mode = 1
+script = ExtResource("1_4kuee")
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=996717695]
+position = Vector2(0, -1)
+texture = ExtResource("2_524rm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1725806245]
+sprite_frames = ExtResource("3_tpg5x")
+animation = &"idle"
+autoplay = "idle"
+offset = Vector2(0, -8)
+
+[node name="HeldItem" type="Sprite2D" parent="." unique_id=1862891724]
+z_index = 1
+position = Vector2(0, -22)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1346193034]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_c3xxp")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=861147083]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=952470273]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_npwbq")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2000299715]
+position = Vector2(0, -8)
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0

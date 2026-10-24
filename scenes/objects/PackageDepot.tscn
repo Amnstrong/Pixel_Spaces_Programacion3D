@@ -1,0 +1,35 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/world/PackageDepot.gd" id="1_g3654"]
+[ext_resource type="Texture2D" path="res://assets/sprites/objects/bedroom/moving_package_large.png" id="2_83inm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_57vxc"]
+radius = 13.0
+
+[node name="PackageDepot" type="Area2D" unique_id=1441406141]
+script = ExtResource("1_g3654")
+package_texture = ExtResource("2_83inm")
+
+[node name="Stack" type="Node2D" parent="." unique_id=894126636]
+
+[node name="Package1" type="Sprite2D" parent="Stack" unique_id=1190779419]
+position = Vector2(-1, 0)
+texture = ExtResource("2_83inm")
+centered = false
+offset = Vector2(-5, -10)
+
+[node name="Package2" type="Sprite2D" parent="Stack" unique_id=1624706916]
+position = Vector2(1, -9)
+texture = ExtResource("2_83inm")
+centered = false
+offset = Vector2(-5, -10)
+
+[node name="Package3" type="Sprite2D" parent="Stack" unique_id=404434540]
+position = Vector2(-1, -18)
+texture = ExtResource("2_83inm")
+centered = false
+offset = Vector2(-5, -10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=675461902]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_57vxc")

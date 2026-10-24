@@ -1,0 +1,22 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/world/Hazard.gd" id="1_pkof2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/vehicles/car_red.png" id="2_lnl45"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8okr"]
+size = Vector2(22, 7)
+
+[node name="Car" type="Area2D" unique_id=1777302327]
+script = ExtResource("1_pkof2")
+speed = 80.0
+time_penalty = 8.0
+hit_message = "¡Un auto! -8s"
+
+[node name="Visual" type="Sprite2D" parent="." unique_id=519377609]
+texture = ExtResource("2_lnl45")
+centered = false
+offset = Vector2(-13, -14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=45027139]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_g8okr")

@@ -1,0 +1,20 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/world/PickupItem.gd" id="1_dvid3"]
+[ext_resource type="Texture2D" path="res://assets/ui/shadow.png" id="2_4bk70"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wvvr2"]
+radius = 7.0
+
+[node name="PickupItem" type="Area2D" unique_id=1701676544]
+script = ExtResource("1_dvid3")
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1166158663]
+texture = ExtResource("2_4bk70")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1942311245]
+position = Vector2(0, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2114898637]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_wvvr2")
